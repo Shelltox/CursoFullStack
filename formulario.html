@@ -4,16 +4,77 @@
         <meta charset="utf-8"> 
         <title>Contacto</title>
     </head>
-    <body>
-            <form action="" method="post">
+    <body style="background-color: #95939ebd">
+        <div  >
+            <h2>Formulario de Contacto de Martin Rodriguez</h2>
+            <form action="" method="post"  >
                     <p>
-                        <label for="VarNombre">Nombres:</label>    
+                        <label for="VarNombre">Nombres</label> 
+                        <br>       
                         <input type="text" name="nombre"/>
                     </p>
                     <p>
-                        <input type="text" name="nombre" placeholder="Apellidos"/>
+                        <label for="VarApellido">Apellidos</label>    
+                        <br>    
+                        <input type="text" name="apellido"/>
+                        <!-- <input type="text" name="nombre" placeholder="Apellidos"/> -->
+                    </p>
+                    <p>
+                        <label for="VarSexo">Sexo</label>    
+                        <br>    
+                        <ul>
+                            <li>
+                                <label>Hombre</label>    
+                                <input type="radio" name="sexo" value="hombre"/>
+                            </li>
+                            
+                            <li>
+                                <label>Mujer</label>    
+                                <input type="radio" name="sexo" value="mujer"/>
+                            </li>
+                        </ul>   
+                    </p>
+                    <p>
+                        <label for="VarIntereses">Intereses</label>    
+                        <br>    
+                        <ul>
+                            <li>
+                                <label for="backend"> Desarrollador BackEnd</label>
+                                <input type="checkbox" name="Intereses[]" value="Desarrollador BackEnd" id="backend"/>
+                            </li>
+                            
+                            <li>
+                                <label for="frontend">Desarrollador FrontEnd</label>    
+                                <input type="checkbox" name="Intereses[]" value="Desarrollador FrontEnd" id="frontend"/>
+                            </li>
+                            <li>
+                                <label for="BI">Desarrollador BI</label>    
+                                <input type="checkbox" name="Intereses[]" value="Desarrollador BI" id="BI"/>
+                            </li>
+                        </ul>   
+                    </p>
+                    <p>
+                        <label for="VarTitulo">Nivel de Estudios</label>
+                        <br>    
+                        <select name="titulo">
+                            <option value="Primario">Primario</option>
+                            <option value="Secundario">Secundario</option>
+                            <option value="Terciario">Terciario</option>
+                            <option value="Universitario">Universitario</option>
+                            <option value="Doctorado">Doctorado</option>
+                        </select> 
+                    </p>
+                    <p>
+                        <label for="VarComentarios">Comentarios</label>
+                        <br>    
+                        <textarea name="comentarios"></textarea>
+                    </p>
+                    <p>
+                        <input type="submit" value="Enviar">
+                        <input type="reset" value="Borrar Todo">
                     </p>
 
             </form>
+        </div>
     </body>
 </html>
