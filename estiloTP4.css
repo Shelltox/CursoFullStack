@@ -1,12 +1,13 @@
 body{
     background-color: black;
     font-style: normal; color: beige;
-    
 }
+
 p{
     font-size: 1em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 h5{
     font-size: 1.5em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -28,6 +29,22 @@ h1{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.Listado{
+    font-size: 1.0em;
+    font-family: cursive;
+}
 
+#HipervinculoTitulo{
+    color: #44a0ee!important;
+}
 
-
+a:link {
+    /*color: #44a0ee!important;*/
+    font-family:fantasy;
+}
+a:visited {
+    color:aqua;
+}
+a:hover {
+    color:coral;
+  }
