@@ -5,28 +5,34 @@ body{
 
 p{
     font-size: 1em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: 'Encode Sans Semi Expanded', sans-serif;
 }
+
 
 h5{
     font-size: 1.5em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 h4{
     font-size: 1.3em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: 'Encode Sans Semi Expanded', sans-serif;
 }
 h3{
     font-size: 1.1em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: 'Encode Sans Semi Expanded', sans-serif;
 }
 h2{
     font-size: 0.9em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: 'Encode Sans Semi Expanded', sans-serif;
 }
 h1{
     font-size: 2em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: 'Encode Sans Semi Expanded', sans-serif;
 }
 
 .Listado{
@@ -69,4 +75,12 @@ a:hover {
     box-shadow: 11px 13px 15px 4px rgba(43, 53, 94, 0.65);
     -webkit-box-shadow: 11px 13px 15px 4px rgba(43, 53, 94, 0.65);
     -moz-box-shadow: 11px 13px 15px 4px rgba(43, 53, 94, 0.65);
+}
+
+.Texto{
+    background-color: grey;
+    padding: 10px;
+    column-count: 3;
+    column-gap: 20px;
+    column-rule: 2px solid white;
 }
