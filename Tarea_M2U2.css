@@ -35,47 +35,31 @@ h1{
     font-family: 'Encode Sans Semi Expanded', sans-serif;
 }
 
-.Listado{
-    font-size: 1.0em;
-    font-family: cursive;
+.Contenedor1{
+    height: 120px;
+    background-color: darkcyan;
+    display: inline-flex;
+    
 }
 
-#HipervinculoTitulo{
-    color: #44a0ee!important;
-}
-
-a:link {
-    /*color: #44a0ee!important;*/
-    font-family:fantasy;
-}
-a:visited {
-    color:aqua;
-}
-a:hover {
-    color:coral;
-}
-
- /* class="Caja" */
-.Caja{
-    width: 400px;
-    height: 200px;
-    /* gradiente*/
+ /* class="Item" */
+.Item1{
+    width: 100px;
+    height: 100px;
+    background-color: darkslateblue;
+    margin: 10px;
+    font-size: 30px;
+    /*
+    /* gradiente
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(56,93,97,1) 45%, rgba(0,212,255,1) 100%);
-    /* Sombra de la Caja: Parametros EjeY, EjeX, desenfoque y Color*/
+    /* Sombra de la Caja: Parametros EjeY, EjeX, desenfoque y Color
     box-shadow: 11px 13px 15px 4px rgba(43, 53, 94, 0.65);
     -webkit-box-shadow: 11px 13px 15px 4px rgba(43, 53, 94, 0.65);
-    -moz-box-shadow: 11px 13px 15px 4px rgba(43, 53, 94, 0.65);
+    -moz-box-shadow: 11px 13px 15px 4px rgba(43, 53, 94, 0.65); */
 }
 
-.Foto{
-    border: 20px double #0f487d;
-    border-radius: 190px 190px 190px 190px;
-    /* Sombra de la Caja: Parametros EjeY, EjeX, desenfoque y Color*/
-    box-shadow: 11px 13px 15px 4px rgba(43, 53, 94, 0.65);
-    -webkit-box-shadow: 11px 13px 15px 4px rgba(43, 53, 94, 0.65);
-    -moz-box-shadow: 11px 13px 15px 4px rgba(43, 53, 94, 0.65);
-}
+
 
 .Texto{
     background-color: grey;
