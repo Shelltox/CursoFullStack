@@ -36,10 +36,31 @@ h1{
 }
 
 .Contenedor1{
-    height: 120px;
+    height: 300px;
+    width: 300px;
+    background-color: darkcyan;
+    /* display: inline-flex;  /*Ajusta el contenedor al ancho segun cantida de elementos en linea
+    /* display: flex; Ancho del Contenedor Flexible en linea*/ 
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.Contenedor2{
+    height: 300px;
+    width: 300px;
+    background-color: darkcyan;
+    display: inline-flex;  
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.Contenedor3{
+    height: 100px;
+    width: 500px;
     background-color: darkcyan;
     display: inline-flex;
-    
+    justify-content: space-between;
 }
 
  /* class="Item" */
@@ -47,19 +68,22 @@ h1{
     width: 100px;
     height: 100px;
     background-color: darkslateblue;
-    margin: 10px;
     font-size: 30px;
-    /*
-    /* gradiente
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(56,93,97,1) 45%, rgba(0,212,255,1) 100%);
-    /* Sombra de la Caja: Parametros EjeY, EjeX, desenfoque y Color
-    box-shadow: 11px 13px 15px 4px rgba(43, 53, 94, 0.65);
-    -webkit-box-shadow: 11px 13px 15px 4px rgba(43, 53, 94, 0.65);
-    -moz-box-shadow: 11px 13px 15px 4px rgba(43, 53, 94, 0.65); */
 }
 
+.Item2{
+    width: 100px;
+    height: 100px;
+    background-color: darkslateblue;
+    font-size: 30px;
+}
 
+.Item3{
+    width: 100px;
+    height: 100px;
+    background-color: darkslateblue;
+    font-size: 30px;
+}
 
 .Texto{
     background-color: grey;
