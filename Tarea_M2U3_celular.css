@@ -7,11 +7,18 @@ body {
 	font-size:100%;
 }
 #contenedor {
-	width: 800px;
+	width: 768px;
 	background: #8FA68E;
 	margin-right:auto;
 	margin-left:auto;
 	overflow: hidden;
+	
+	/* Adaptacion para Mobile */
+	display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+	align-items: center;
+	/*------------------------*/
 }
 nav {
 	background: #CC3910;
@@ -30,6 +37,7 @@ section {
 	float: left;
 	margin: 0 0 0 25px;
 	width: 400px;
+	
 }
 aside {
 	background: #CCC59E;
