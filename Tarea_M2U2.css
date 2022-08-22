@@ -59,6 +59,7 @@ h1{
     height: 100px;
     width: 500px;
     background-color: darkcyan;
+    
     display: inline-flex;
     justify-content: space-between;
 }
@@ -69,6 +70,11 @@ h1{
     height: 100px;
     background-color: darkslateblue;
     font-size: 30px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .Item2{
@@ -76,6 +82,10 @@ h1{
     height: 100px;
     background-color: darkslateblue;
     font-size: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .Item3{
@@ -83,6 +93,10 @@ h1{
     height: 100px;
     background-color: darkslateblue;
     font-size: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .Texto{
