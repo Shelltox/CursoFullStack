@@ -59,6 +59,57 @@ nav ul li a.activo {
     margin: 0 auto;
 }
 
+h2{
+    color: chocolate;
+    font-weight: 400;
+}
+
+/* HOME INICIO */
+
+.bienvenidos{
+    width: 75%;
+    padding-right: 10px;
+    box-sizing: border-box;
+
+}
+
+.bienvenidos p{
+    font-size: 20px;
+}
+
+.testimonios{
+    width: 25%;
+    padding-right: 10px;
+    box-sizing: border-box;
+
+}
+
+.testimonio {
+    background-color: gray;
+    padding: 16px;
+}
+
+.testimonio .cita {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 22px;
+    background-color: yellow;
+    display: block;
+}
+.testimonio .autor {
+    font-size: 10px;
+    background-color: cornflowerblue;
+    display: block;
+    margin: 12px 0;
+    text-align: center;
+}
+.columnas{
+    display: flex;
+    justify-content: space-between;
+}
+/* HOME FIN */
+
+
 footer{
     background-color: darkgrey;
     clear: both;
@@ -74,9 +125,7 @@ footer{
 
 
 
-h1{
-    align-items: center;
-}
+
 
 .Login{
     width: 320px;
