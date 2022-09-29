@@ -217,6 +217,7 @@ footer {
 .formulario textarea {
     resize: none;
     height: 150px;
+    width: 39%;
 }
 
 .formulario input[type="submit"] {
@@ -282,7 +283,7 @@ footer {
     padding: 6px 20px;
     width: auto;
     position: relative;
-    left: 5rem;
+    left: 12.5rem;
     cursor: pointer;
 }
 
