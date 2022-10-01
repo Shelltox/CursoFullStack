@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<HTML>
+
+<head>
+    <meta charset="utf-8">
+    <title>RadioVia</title>
+    <link rel="stylesheet" href="Tarea M4U4_N1.css">
+</head>
+
+<!-- TAREA Modulo 4 Unidad 4  -->
+
+<body class="Body" id="Body">
+    <main class="holder">
+        <div Class="Caja1" onclick="FunEjercicio_M4U4_N1(1)" >
+            <p>Caja 1</p>
+        </div>
+        <div Class="Caja2" onclick="FunEjercicio_M4U4_N1(2)" >
+            <p>Caja 2</p>
+        </div>
+        <div Class="Caja3" onclick="FunEjercicio_M4U4_N1(3)" >
+            <p>Caja 3</p>
+        </div>
+    </main>
+
+    <script> 
+        function FunEjercicio_M4U4_N1(VarCaja){
+            const VarBody = document.getElementById('Body')
+            if (VarCaja == 1) {
+                VarBody.style.background = "blue"
+            } else if (VarCaja == 2) {
+                VarBody.style.background = "green"
+            } else if (VarCaja == 3) {
+                VarBody.style.background = "red"
+            } 
+        }
+    </script>
+</body>

@@ -40,3 +40,14 @@ function FunEjercicio_M4U3_N2() {
 
     document.writeln('El Numero Ingresado Mayor es: ' + VarNumAnterior ,'')
 }
+
+
+function FunEjercicio_M4U4_N1(){
+
+}
+function FunEjercicio_M4U4_N2(){
+
+}
+function FunEjercicio_M4U4_N3(){
+
+}

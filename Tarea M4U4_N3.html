@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<HTML>
+
+<head>
+    <meta charset="utf-8">
+    <title>RadioVia</title>
+</head>
+
+<!-- TAREA Modulo 4 Unidad 4  -->
+
+<body class="Body" id="Body">
+    <main class="holder">
+        <div id="Listado">
+            
+        </div>
+        <BR>
+        <div id="Listado1">
+            
+        </div>
+    </main>
+
+    <script>
+        var alumnos = [
+
+            {
+
+                nombre: 'Juan Gomez',
+
+                nota: 7
+
+            }, {
+
+                nombre: 'Pedro Rodriguez',
+
+                nota: 4
+
+            }, {
+
+                nombre: 'Roxana García',
+
+                nota: 8
+
+            }, {
+
+                nombre: 'Luciano Lopez',
+
+                nota: 5
+
+            }, {
+
+                nombre: 'Fernanda Gimenez',
+
+                nota: 6
+
+            }, {
+
+                nombre: 'Florencia Martinez',
+
+                nota: 10
+
+            }, {
+
+                nombre: 'Raul Sanchez',
+
+                nota: 7
+
+            }, {
+
+                nombre: 'Sandra Figueroa',
+
+                nota: 8
+
+            }
+
+        ];
+
+        //FunEjercicio_M4U4_N3a();
+        FunEjercicio_M4U4_N3b();
+
+        function FunEjercicio_M4U4_N3a() {
+            // METODOLOGIA 1
+           
+            const VarElemento = document.getElementById("Listado")
+            var VarReturn = "<h2> METODO 1: Lista de Alumnos Aprobados:</h2> <br>"
+            for (i = 0; alumnos.length - 1; i++) {
+                if (alumnos[i].nota >= 7) {
+                    VarReturn = VarReturn + "<p>" + alumnos[i].nombre + ':' + alumnos[i].nota + "</p> <br>"
+                    VarElemento.innerHTML = VarReturn
+                }
+            }
+        }
+
+        function FunEjercicio_M4U4_N3b() {
+            // METODOLOGIA 2
+            const VarElemento1 = document.getElementById("Listado1")
+            var VarReturn1 = "<h2>METODO 2: Lista de Alumnos Aprobados:</h2> <br>"
+            const VarAprobados = alumnos.filter(num => num.nota >= 7);
+            for (a = 0; VarAprobados.length - 1; a++) {
+                VarReturn1 = VarReturn1 + "<p>" + VarAprobados[a].nombre + ':' + VarAprobados[a].nota + "</p> <br>"
+                VarElemento1.innerHTML = VarReturn1
+            }
+        }
+
+    </script>
+</body>

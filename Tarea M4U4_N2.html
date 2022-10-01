@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<HTML>
+
+<head>
+    <meta charset="utf-8">
+    <title>RadioVia</title>
+</head>
+
+<!-- TAREA Modulo 4 Unidad 4  -->
+
+<body class="Body" id="Body">
+    <main class="holder">
+        <div Class="Caja">
+            <label>Ejercicio 2:
+                <textarea id="Ejercicio2" cols="60" rows="20" onkeyup="FunEjercicio_M4U4_N2(this);"></textarea>
+            </label>
+        </div>
+        <br>
+        <div id="Contador">
+            
+        </div>
+
+    </main>
+
+    <script>
+        function FunEjercicio_M4U4_N2(Elemento) {
+            const VarElemento = document.getElementById("Contador")
+            VarElemento.innerText = 'Cantidad de Caracteres: ' + Elemento.value.length;
+        }
+    </script>
+</body>
