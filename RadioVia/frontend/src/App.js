@@ -1,8 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import Head from './componentes/layout/Head';
+import Header from './componentes/layout/Header';
+import Nav from './componentes/layout/Nav';
+import Main from './componentes/layout/Main';
+import Footer from './componentes/layout/Footer';
+
+/* Mayusculas Componentes / Minusculas Etiqueta HTML */
 
 function App() {
   return (
+    <div className="App">
+      <Head/>
+      <Header/>
+      <Nav/>
+      <Main/>
+      <Footer/>
+    </div>
+  );
+}
+
+export default App;
+
+
+/*
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -19,7 +40,4 @@ function App() {
         </a>
       </header>
     </div>
-  );
-}
-
-export default App;
+*/

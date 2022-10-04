@@ -1,0 +1,322 @@
+Body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+header {
+    background-color: rgb(133, 158, 207);
+    padding: 16px;
+}
+
+header h1 {
+    color: white;
+    font-size: 40px;
+    font-weight: 300;
+    font-style: italic;
+    /* Posicionamiento */
+    display: inline-block;
+    position: relative;
+    bottom: 35px;
+    margin-left: 10px;
+}
+
+nav {
+    background-color: rgb(131, 189, 255);
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    flex-grow: 1;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 3px 6px;
+    display: block;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    background-color: darkorange;
+}
+
+nav ul li a.activo {
+    background-color: darkorange;
+}
+
+.holder {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: chocolate;
+    font-weight: 400;
+}
+
+footer {
+    background-color: darkgrey;
+    clear: both;
+    color: #333;
+    text-align: center;
+    padding: 50px;
+    margin-top: 20px;
+}
+
+/* HOME INICIO */
+
+.bienvenidos {
+    width: 75%;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.bienvenidos p {
+    font-size: 20px;
+}
+
+.testimonios {
+    width: 25%;
+    padding-right: 10px;
+    box-sizing: border-box;
+
+}
+
+.testimonio {
+    background-color: gray;
+    padding: 16px;
+}
+
+.testimonio .cita {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 22px;
+    background-color: yellow;
+    display: block;
+}
+.testimonio .autor {
+    font-size: 10px;
+    background-color: cornflowerblue;
+    display: block;
+    margin: 12px 0;
+    text-align: center;
+}
+.columnas {
+    display: flex;
+    justify-content: space-between;
+}
+/* HOME FIN */
+/* NOSOTROS INICIO */
+.historia p {
+    font-size: 12px;
+}
+
+.personas {
+    display: flex;
+    justify-content: space-between;
+}
+
+.persona {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 18%;
+    text-align: center;
+    padding: 13px;
+    box-sizing: border-box;
+    /* background-color: aqua;*/
+}
+
+.persona img {
+    border-radius: 50%;
+    max-width: 60%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.persona h5, .persona h6 {
+    margin: 0;
+    font-weight: normal;
+    color: #2e64a1;
+}
+
+/* NOSOTROS FIN */
+/* SERVICIOS INICIO */
+.servicio {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 16px 0;
+    display: flex;
+    gap: 32px; 
+    align-items:center;
+}
+ 
+.servicio .info  h4 {
+    color: #2e64a1;
+    font-weight: 500;
+    font-style: italic;
+    border-bottom: 1px solid #2e64a1;
+    padding-bottom: 10px;
+}
+
+.servicio .info p {
+    font-size: 13px;
+}
+
+.servicio img {
+    border-radius: 13px;
+    display: block;
+    max-width: 225px;
+}
+
+.servicio:nth-child(even) {
+    flex-direction:row-reverse; 
+}
+
+/* SERVICIOS FIN */
+/* CONTACTO INICIO */
+.contacto{
+    display: flex;
+    gap:24px;
+}
+
+.contacto div {
+    width: 100%;
+}
+
+.datos p {
+    font-size: 14px;
+}
+
+.datos ul li {
+    font-size: 13px;
+}
+
+.formulario p {
+    display: flex;
+}
+
+.formulario p label{
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.formulario p:nth-child(4){
+    align-items: start;
+}
+
+.formulario textarea {
+    resize: none;
+    height: 150px;
+    width: 39%;
+}
+
+.formulario input[type="submit"] {
+    background: #6da9ed;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    color: white;
+    font-size: 16px;
+    padding: 6px 20px;
+    width: auto;
+    position: relative;
+    left: 5rem;
+    cursor: pointer;
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: #2e64a1;
+}
+
+/* CONTACTO FIN */
+
+/* AGREGAFR MEDIO INICIO */
+.agregarmedios{
+    display: flex;
+    gap:12px;
+}
+
+.agregarmedios div {
+    width: 100%;
+}
+
+.frmagregarmedio p {
+    /*display: flex;*/
+}
+
+.frmagregarmedio p label{
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.frmagregarmedio p input{
+    min-width: 80px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.frmagregarmedio p:nth-child(7){
+    align-items: start;
+}
+
+.frmagregarmedio textarea {
+    resize: none;
+    height: 150px;
+    width: 50%;
+}
+
+.frmagregarmedio input[type="submit"] {
+    background: #6da9ed;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    color: white;
+    font-size: 16px;
+    padding: 6px 20px;
+    width: auto;
+    position: relative;
+    left: 12.5rem;
+    cursor: pointer;
+}
+
+.frmagregarmedio input[type="submit"]:hover {
+    background-color: #2e64a1;
+}
+
+/* AGREGAR MEDIO FIN */
+
+
+
+
+
+
+
+
+
+
+
+.Login{
+    width: 320px;
+    height: 200px;
+    /* gradiente*/
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(56,93,97,1) 45%, rgba(0,212,255,1) 100%);
+    /* Sombra de la Caja: Parametros EjeY, EjeX, desenfoque y Color*/
+    box-shadow: 11px 13px 15px 4px rgba(43, 53, 94, 0.65);
+    -webkit-box-shadow: 11px 13px 15px 4px rgba(43, 53, 94, 0.65);
+    -moz-box-shadow: 11px 13px 15px 4px rgba(43, 53, 94, 0.65);
+    
+    /*
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    */
+}
