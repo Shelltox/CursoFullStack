@@ -6,7 +6,6 @@ const Header = (props) => {
             <img src="img/home/logo.svg" width="100" alt="RadioVia" /><img/>
             <h1>RadioVia</h1>
         </div>
-
     );
 }
 

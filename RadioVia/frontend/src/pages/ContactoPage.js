@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const ContactoPage = (props) => {
     return (
         <main className="holder contacto">

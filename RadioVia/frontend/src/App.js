@@ -1,5 +1,9 @@
-import './App.css';
+
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+
+
+import "./css/normalize.css"
+import "./css/home.css"
 
 import Header from './componentes/layout/Header';
 import Nav from './componentes/layout/Nav';
