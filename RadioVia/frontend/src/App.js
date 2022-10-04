@@ -1,29 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
-import Head from './componentes/layout/Head';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+
 import Header from './componentes/layout/Header';
 import Nav from './componentes/layout/Nav';
 import Main from './componentes/layout/Main';
 import Footer from './componentes/layout/Footer';
 
-/* Mayusculas Componentes / Minusculas Etiqueta HTML */
+import AgregarMedioPage from './pages/AgregarMedioPage';
+import ContactoPage from './pages/ContactoPage';
+import HomePage from './pages/HomePage';
+import NosotrosPage from './pages/NosotrosPage';
+import ServiciosPage from './pages/ServiciosPage';
 
-function App() {
-  return (
-    <div className="App">
-      <Head/>
-      <Header/>
-      <Nav/>
-      <Main/>
-      <Footer/>
-    </div>
-  );
+function App(){
+    return(
+        <div claseName="App">
+            <Header/>
+            <BrowserRouter>
+                <Nav/>
+                <Routes>
+                    <Route path="/" element={<HomePage/>} />
+                    <Route path="nosotros" element={<NosotrosPage/>} />
+                    <Route path="servicios" element={<ServiciosPage/>} />
+                    <Route path="contacto" element={<ContactoPage/>} />
+                    <Route path="agregarmedio" element={<AgregarMedioPage/>} />
+                </Routes>
+            </BrowserRouter>
+            <Main/>
+            <Footer/>
+        </div>
+    );
 }
 
-export default App;
-
-
 /*
+  import logo from './logo.svg';
+import './App.css';
+
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
