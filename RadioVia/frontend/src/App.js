@@ -1,8 +1,8 @@
+import './App.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import Header from './componentes/layout/Header';
 import Nav from './componentes/layout/Nav';
-import Main from './componentes/layout/Main';
 import Footer from './componentes/layout/Footer';
 
 import AgregarMedioPage from './pages/AgregarMedioPage';
@@ -25,11 +25,13 @@ function App(){
                     <Route path="agregarmedio" element={<AgregarMedioPage/>} />
                 </Routes>
             </BrowserRouter>
-            <Main/>
             <Footer/>
         </div>
     );
 }
+
+export default App;
+
 
 /*
   import logo from './logo.svg';
