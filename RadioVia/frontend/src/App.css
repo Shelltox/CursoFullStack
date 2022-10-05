@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.holder {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: chocolate;
+  font-weight: 400;
+}

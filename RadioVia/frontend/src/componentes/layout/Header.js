@@ -1,11 +1,14 @@
 import React from 'react';
+import '../../styles/componentes/layout/Header.css';
 
 const Header = (props) => {
     return (
-        <div className="holder">
-            <img src="img/home/logo.svg" width="100" alt="RadioVia" /><img/>
-            <h1>RadioVia</h1>
-        </div>
+        <header>
+            <div className="holder">
+                <img src="img/home/logo.svg" width="100" alt="RadioVia" /><img/>
+                <h1>RadioVia</h1>
+            </div>
+        </header>
     );
 }
 

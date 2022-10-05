@@ -1,9 +1,8 @@
 
+import "./css/normalize.css";
+import './App.css';
+
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-
-
-import "./css/normalize.css"
-import "./css/home.css"
 
 import Header from './componentes/layout/Header';
 import Nav from './componentes/layout/Nav';
@@ -22,7 +21,7 @@ function App(){
             <BrowserRouter>
                 <Nav/>
                 <Routes>
-                    <Route path="/" element={<HomePage/>} />
+                    <Route path="Home" element={<HomePage/>} />
                     <Route path="nosotros" element={<NosotrosPage/>} />
                     <Route path="servicios" element={<ServiciosPage/>} />
                     <Route path="contacto" element={<ContactoPage/>} />

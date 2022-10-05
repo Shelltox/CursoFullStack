@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../styles/componentes/pages/HomePage.css';
 const HomePage = (props) => {
     return (
         <main className="holder">
