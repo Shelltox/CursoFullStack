@@ -1,6 +1,8 @@
 
-import "./css/normalize.css";
-import './App.css';
+/* 
+  import "./css/normalize.css"; 
+  import './App.css';
+*/
 
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
@@ -40,7 +42,7 @@ export default App;
 /*
   npm i descarga las dependencias.-
   npm start inicia el project react.-
-  
+
 
   import logo from './logo.svg';
 import './App.css';
