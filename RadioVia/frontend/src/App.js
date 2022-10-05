@@ -38,6 +38,10 @@ export default App;
 
 
 /*
+  npm i descarga las dependencias.-
+  npm start inicia el project react.-
+  
+
   import logo from './logo.svg';
 import './App.css';
 
