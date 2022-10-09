@@ -19,11 +19,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//app.use('/', indexRouter);
+//app.use('/users', usersRouter);
 
-app.get('/home', function(req,res){
-  res.send ('Esta es la Pagina de ' + req.path);
+app.get('/', function(req,res){
+  res.send ('Esta es la Pagina de ' + req.path + 'home');
 })
 app.get('/nosotros', function(req,res){
   res.send ('Esta es la Pagina de ' + req.path);
