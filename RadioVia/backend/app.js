@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var loginRouter = require('./routes/admin/login');
 
 var app = express();
 
@@ -19,8 +20,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use('/', indexRouter);
-//app.use('/users', usersRouter);
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/admin/login', loginRouter);
+
+
 
 app.get('/', function(req,res){
   res.send ('Esta es la Pagina de ' + req.path + 'home');
