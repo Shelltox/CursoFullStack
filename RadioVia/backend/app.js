@@ -3,11 +3,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
 
+
+
+/*
+app.use();
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/admin/login');
-
+*/
 var app = express();
 
 // view engine setup
@@ -20,12 +24,38 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret:'asñdkñlwknñlkncorenaldknc{ranlnvñaljnd',
+  resave: false,
+  saveUninitialized: true
+}));
+
+/*
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter);
+*/
 
 
+app.get('/', function(req,res){
+  var conocido = Boolean(req.session.nombre);
 
+  res.render('index',{ //index.hbs
+    title: 'Bienvenidos a Radiovia BackEnd Login',
+    conocido: conocido,
+    nombre: req.session.nombre
+  });
+  
+app.post('/ingresar',function(req,res){
+  if(req.session.nombre){
+    req.session.nombre = req.body.nombre
+  }
+  res.redirect('/');
+});
+
+
+});
+/*
 app.get('/', function(req,res){
   res.send ('Esta es la Pagina de ' + req.path + 'home');
 })
@@ -41,7 +71,7 @@ app.get('/contacto', function(req,res){
 app.get('/agregarmedio', function(req,res){
   res.send ('Esta es la Pagina de ' + req.path);
 })
-
+*/
 
 
 // catch 404 and forward to error handler
