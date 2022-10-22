@@ -1,17 +1,10 @@
 var createError = require('http-errors');
-var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var express = require('express');
 var session = require('express-session');
 
-
-
-/*
-app.use();
-var indexRouter = require('./routes/index');
-var loginRouter = require('./routes/admin/login');
-*/
 var app = express();
 
 // view engine setup
@@ -30,31 +23,69 @@ app.use(session({
   saveUninitialized: true
 }));
 
-/*
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/admin/login', loginRouter);
-*/
+//var indexRouter = require('./routes/admin/login');
+//app.use('/admin/login', indexRouter);
 
+/* redirecionar al backend de forma directa */
+app.get('/', function(req,res){
+  res.redirect('/admin/login');
+});
+
+
+app.get('/admin/login', function(req,res){
+  var conocido = Boolean(req.session.UserName); 
+
+  res.render('admin/login', { 
+    layout: 'admin/layout',  //login.hbs y layout.hbs
+    title: 'Bienvenidos a Radiovia',
+    conocido: conocido,
+    UserName: req.session.UserName,
+    UserPass: req.session.UserPass
+  });
+});
+
+app.post('/admin/login/ingresar', function(req,res){
+  if(req.body.UserName){
+    req.session.UserName = req.body.UserName
+  }
+  if(req.body.UserPass){
+    req.session.UserPass = req.body.UserPass
+  }
+  res.redirect('/admin/login');
+});
+
+app.get('/admin/login/salir', function(req,res){
+  req.session.destroy();
+  res.redirect('/admin/login');
+});
+
+
+/*
 
 app.get('/', function(req,res){
-  var conocido = Boolean(req.session.nombre);
+  var conocido = Boolean(req.session.UserName);
 
   res.render('index',{ //index.hbs
-    title: 'Bienvenidos a Radiovia BackEnd Login',
+    title: 'Bienvenidos a Radiovia',
     conocido: conocido,
-    nombre: req.session.nombre
+    UserName: req.session.UserName
   });
-  
-app.post('/ingresar',function(req,res){
-  if(req.session.nombre){
+});
+
+app.get('/salir', function(req,res){
+  req.session.destroy();
+  res.redirect('/');
+});
+
+app.post('/ingresar', function(req,res){
+  if(req.body.nombre){
     req.session.nombre = req.body.nombre
   }
   res.redirect('/');
 });
 
+*/
 
-});
 /*
 app.get('/', function(req,res){
   res.send ('Esta es la Pagina de ' + req.path + 'home');
@@ -91,3 +122,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
