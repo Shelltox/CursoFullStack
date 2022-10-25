@@ -1,9 +1,13 @@
+
 var createError = require('http-errors');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var express = require('express');
 var session = require('express-session');
+
+require('dotenv').config(); //Variables de Entorno
+var pool = require('./models/db'); //Conexion con Base de Datos
 
 var app = express();
 
@@ -58,6 +62,46 @@ app.get('/admin/login/salir', function(req,res){
   req.session.destroy();
   res.redirect('/admin/login');
 });
+
+/* INSERTAR EN BD 
+var VarInsert = {
+  id_emp: null,
+  nombre: 'Juan Diego',
+  apellido: 'Gutierrez',
+  trabajo: 'Diseñador Web',
+  edad: 27,
+  salario: 90000,
+  mail: 'juandi_Guti@bignet.com'
+}
+
+pool.query('INSERT INTO empleados SET ?',VarInsert).then(function(Resul){
+  console.log(Resul)
+});
+*/
+
+/* ELIMINAR REGISTRO EN BD 
+var VarId = 3;
+pool.query('DELETE FROM empleados WHERE id_emp = ?',VarId).then(function(Resul){
+  console.log(Resul)
+});
+*/
+
+/* ACTUALIZAR REGISTRO EN BD 
+var VarUpdate = {
+  nombre: 'Pablo',
+  apellido: 'Gomez'
+};
+var VarId = 2;
+pool.query('UPDATE empleados SET ? WHERE id_emp = ?',[VarUpdate, VarId]).then(function(Resul){
+  console.log(Resul)
+});
+*/ 
+
+/* CONSULTA */
+pool.query('SELECT * FROM empleados').then(function(Resul){
+    console.log(Resul)
+});
+ 
 
 
 /*
