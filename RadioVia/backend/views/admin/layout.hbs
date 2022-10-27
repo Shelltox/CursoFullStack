@@ -34,16 +34,25 @@
         </div>
     </header>
     
-    {{#if conocido}}
+    
+    {{#if UserName}}
+        <!--
         <p>Hola {{UserName}} <a href="/admin/login/salir">Salir</a></p>
         <p>Binvenidos a {{title}}</p>
+         -->
+         <div style="width: 350px; margin-left: 35%;">
+            {{{body}}}
+        </div>
     {{/if}}
 
-    {{#unless conocido}}
+    {{#unless UserName}}
         <p><h6 style="margin-left: 50px;"> RadioVia: Ingreso a la Administracion del Sitio</h6></p>
         <div style="width: 350px; margin-left: 35%;">
             {{{body}}}
         </div>
+    {{/unless}}
+
+        
         <!--
         <p>No te Conozco</p>
         <form action="/ingresar" method="post">
@@ -51,8 +60,9 @@
             <button>Ingresar</button>
         </form>
         -->
-    {{/unless}}
     
+    
+
     <footer>
         <p>Fundado por Martin Rodriguez - &copy;2022 </p>
     </footer>

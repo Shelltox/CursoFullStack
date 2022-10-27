@@ -27,15 +27,62 @@ app.use(session({
   saveUninitialized: true
 }));
 
-//var indexRouter = require('./routes/admin/login');
-//app.use('/admin/login', indexRouter);
+var secured = async(req,res,next) => {
+  try{
+    console.log(req.session.IdUser);
+    if (req.session.IdUser){
+      next();
+    }else{
+      res.redirect('/admin/login');
+    }
 
-/* redirecionar al backend de forma directa */
+  }catch(error){
+    console.log(error);
+  }
+};
+
+var loginRouter = require('./routes/admin/login');
+app.use('/admin/login', loginRouter);
+
+var adminAgregarMedioPageRouter = require('./routes/admin/AgregarMedioPage')
+app.use('/admin/AgregarMedioPage', secured, adminAgregarMedioPageRouter);
+
+/* redirecionar al backend de forma directa  */
 app.get('/', function(req,res){
   res.redirect('/admin/login');
 });
 
+/* redirecionar al backend de forma directa  */
+app.get('/admin/logout', function(req, res, next){
+  req.session.destroy();
+  res.render('admin/login', { layout: 'admin/layout'}); //login.hbs y layout.hbs
+});
 
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
+
+module.exports = app;
+
+
+
+
+
+
+
+
+/*
 app.get('/admin/login', function(req,res){
   var conocido = Boolean(req.session.UserName); 
 
@@ -62,6 +109,8 @@ app.get('/admin/login/salir', function(req,res){
   req.session.destroy();
   res.redirect('/admin/login');
 });
+
+ */
 
 /* INSERTAR EN BD 
 var VarInsert = {
@@ -97,11 +146,11 @@ pool.query('UPDATE empleados SET ? WHERE id_emp = ?',[VarUpdate, VarId]).then(fu
 });
 */ 
 
-/* CONSULTA */
+/* CONSULTA 
 pool.query('SELECT * FROM empleados').then(function(Resul){
     console.log(Resul)
 });
- 
+*/
 
 
 /*
@@ -148,22 +197,4 @@ app.get('/agregarmedio', function(req,res){
 })
 */
 
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
-
-module.exports = app;
 
