@@ -4,7 +4,7 @@ import '../styles/componentes/pages/ContactoPage.css';
 const ContactoPage = (props) => {
     return (
         <main className="holder contacto">
-        <div>
+        <div style="padding=30px">
             <h2>Contactate conmigo..</h2>
 
             <form action="" method="" class="formulario">

@@ -9,12 +9,12 @@ router.get('/', function (req, res, next) {
 
 router.post('/', async(req, res, next) => {
   try{
-    var usuario = req.body.UserName;
+    var usuario = req.body.UserNombre;
     var password = req.body.UserPass;
 
     var data = await usuarioModel.getUserByUsernameAndPassword(usuario, password);
     if (data != undefined){
-      req.session.IdUser = data.id;
+      req.session.UserId = data.id;
       req.session.UserName = data.usuario;
       res.redirect('/admin/AgregarMedioPage');
     }else{
