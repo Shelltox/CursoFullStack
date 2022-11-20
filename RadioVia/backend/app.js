@@ -3,8 +3,17 @@ var createError = require('http-errors');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
 var express = require('express');
+// Manejo de Sesiones
 var session = require('express-session');
+// Manejo de Imagenes para el repositorio cloudinary
+var fileUpload = require('express-fileupload');
+
+
+// Menajo de API
+var cors = require('cors');
+
 
 require('dotenv').config(); //Variables de Entorno
 var pool = require('./models/db'); //Conexion con Base de Datos
@@ -20,6 +29,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(fileUpload({useTempFiles:true, tempFileDir:'/tmp/'}));
+
 
 app.use(session({
   secret:'asñdkñlwknñlkncorenaldknc{ranlnvñaljnd',
@@ -40,6 +51,10 @@ var secured = async(req,res,next) => {
     console.log(error);
   }
 };
+
+// Ruteador de la API
+var apiRouter = require('./routes/api/api');
+app.use('/api/api',cors(), apiRouter);
 
 var loginRouter = require('./routes/admin/login');
 app.use('/admin/login', loginRouter);

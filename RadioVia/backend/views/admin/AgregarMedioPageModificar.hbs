@@ -9,10 +9,17 @@
                 {{/if }}
             </div>
 
-            <form action="/admin/AgregarMedioPage/AgregarMedioPageModificar" method="POST" class="frmagregarmedio">
+            <form action="/admin/AgregarMedioPage/AgregarMedioPageModificar" 
+                  method="POST" 
+                  class="frmagregarmedio"
+                  enctype="multipart/form-data"> <!-- enviará los archivos que incluyamos los Logos-->
                 
-                <p><label for="nombre">Logo</label>
-                    <input type="text" name="Logo" value="{{Datos.Logo}}"/>
+                
+                <p><label for="Logo">Logo</label>
+                    <input type="file" name="Logo"/>
+                </p>
+                <p>
+                    <label><input type="checkbox" name="img_delete" value="1"/> ¿Eliminar la Imagen Actual?</label>
                 </p>
                 <p><label for="nombre">Nombre del Medio</label>
                     <input type="text" name="Descripcion"value="{{Datos.Descripcion}}" />
@@ -39,6 +46,7 @@
                 <input type="hidden" name="FchHoraAlta" value=""/> 
                 <input type="hidden" name="IdUsuario" value="{{UserId}}"/>
                 <input type="hidden" name="IdMedio" value="{{Datos.IdMedio}}"></input>
+                <input type="hidden" name="img_original" value="{{Datos.Logo}}"></input>
 
                 <p><input type="submit" value="Guardar"/></p>
             </form>
