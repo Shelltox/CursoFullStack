@@ -5,7 +5,6 @@ import MedioItem from '../componentes/medios/MedioItem';
 //Hoja de Estilos
 import '../styles/componentes/pages/HomePage.css';
 
-
 const HomePage = (props) => {
     const [loading, setLoading] = useState(false);
     const [medios, setMedios] = useState([]);
@@ -31,21 +30,23 @@ const HomePage = (props) => {
                     <p>A la Guia Gratuita y Centralizada de Medios de Comunicacion (Radio, Diario y Television)</p>
                 
                     <h2>Medios</h2>
+
                     {loading ? (<p>cargando...</p>):(
-                        medios.map(item => <MedioItem 
-                                                key={itemIdMedio}
-                                                Descripcion={item.Descripcion}
-                                                WhatsApp={item.WhatsApp}
-                                                Email={item.Email}
-                                                URL={item.URL}
-                                                Logo={item.Logo}
-                                                LinkWinamp={item.LinkWinamp}
-                                                LinkWMP={item.LinkWMP}
-                                                Comentarios={item.Comentarios}
-                                                FchHoraAlta={item.FchHoraAlta}
-                                                IdUsuario={item.IdUsuario}
-                                            />)
+                        medios.map(item => <MedioItem
+                            key={item.IdMedio}
+                            Descripcion={item.Descripcion}
+                            WhatsApp={item.WhatsApp}
+                            Email={item.Email}
+                            URL={item.URL}
+                            Logo={item.Logo}
+                            LinkWinamp={item.LinkWinamp}
+                            LinkWMP={item.LinkWMP}
+                            Comentarios={item.Comentarios}
+                            FchHoraAlta={item.FchHoraAlta}
+                            IdUsuario={item.IdUsuario}
+                        />)
                     )}
+                    
                 </section>
             </div>
         </main>
@@ -55,6 +56,9 @@ const HomePage = (props) => {
 export default HomePage;
 
 /*
+
+
+                                            
 {loading ? (<p>cargando...</p>):(
                         medios.map(item => <MedioItem 
                                                 key={item.IdMedio}
