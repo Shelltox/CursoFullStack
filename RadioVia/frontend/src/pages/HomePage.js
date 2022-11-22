@@ -19,6 +19,9 @@ const HomePage = (props) => {
         cargarMedios();
     },[]);
 
+    // item.medios.IdMedio --> Agregue 'medios' en el medio de item.IdMedio porque el nodo principal 
+    // del JSON que genera mi aplicativo viene con el nombre de la tabla 'medios'
+
     return (
         <main className="holder">
             <div>
@@ -33,17 +36,17 @@ const HomePage = (props) => {
 
                     {loading ? (<p>cargando...</p>):(
                         medios.map(item => <MedioItem
-                            key={item.IdMedio}
-                            Descripcion={item.Descripcion}
-                            WhatsApp={item.WhatsApp}
-                            Email={item.Email}
-                            URL={item.URL}
-                            Logo={item.Logo}
-                            LinkWinamp={item.LinkWinamp}
-                            LinkWMP={item.LinkWMP}
-                            Comentarios={item.Comentarios}
-                            FchHoraAlta={item.FchHoraAlta}
-                            IdUsuario={item.IdUsuario}
+                            IdMedio={item.medios.IdMedio}
+                            Logo={item.medios.Logo}
+                            Descripcion={item.medios.Descripcion}
+                            WhatsApp={item.medios.WhatsApp}
+                            Email={item.medios.Email}
+                            URL={item.medios.URL}
+                            LinkWinamp={item.medios.LinkWinamp}
+                            LinkWMP={item.medios.LinkWMP}
+                            Comentarios={item.medios.Comentarios}
+                            FchHoraAlta={item.medios.FchHoraAlta}
+                            IdUsuario={item.medios.IdUsuario}
                         />)
                     )}
                     

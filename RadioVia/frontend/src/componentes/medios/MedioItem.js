@@ -1,11 +1,10 @@
 import React from 'react';
 
-const MedioItem = (props) => {
-    const { key, Logo, Descripcion, WhatsApp, Email, URL, LinkWinamp, LinkWMP, Comentarios, FchHoraAlta, IdUsuario } = props;
+const MedioItem = ({ IdMedio, Logo, Descripcion, WhatsApp, Email, URL, LinkWinamp, LinkWMP, Comentarios, FchHoraAlta, IdUsuario }) => {
     return (
         <div className="MedioItem">
-            <h3>key: {key}</h3>
-            <img src={Logo}></img>
+            <h3>key: {IdMedio}</h3>
+            <img height={100} width={100} src={Logo}></img>
             <h4>Descripcion: {Descripcion}</h4>
             <h4>WhatsApp: {WhatsApp}</h4>
             <h4>Email: {Email}</h4>
@@ -23,18 +22,5 @@ const MedioItem = (props) => {
 export default MedioItem;
 
 /*
-<h2>{key}</h2>
-                <img src={Logo}></img>
-                <h1>{Descripcion}</h1>
-                <h2>{WhatsApp}</h2>
-                <h2>{Email}</h2>
-                <h2>{URL}</h2>
-                <h2>{LinkWinamp}</h2>
-                <h2>{LinkWMP}</h2>
-                <h2>{Comentarios}</h2>
-                <h2>{FchHoraAlta}</h2>
-                <h2>{IdUsuario}</h2>
-                <hr />
-
 <div dangerouslySetInnerHTML={{ __html: body}} />
 */
