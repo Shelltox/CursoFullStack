@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 
+#Carpetas NoSeUsa
+/src/NoSeUsa
+/public/NoSeUsa
+
 # testing
 /coverage
 
