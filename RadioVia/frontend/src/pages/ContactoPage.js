@@ -61,8 +61,7 @@ const ContactoPage = (props) => {
                 </form>
             </div>
             <div className="datos">
-                <h2>Otras vias de Contactarme..</h2>
-                <p>Tambien puede contactarse con nosotros usando los siguientes medios</p>
+                <h2>Tambien podes contactarte conmigo... </h2>
                 <ul>
                     <li>Telefono: +4593624250761</li>
                     <li>WhatsApp: +4593624250761</li>

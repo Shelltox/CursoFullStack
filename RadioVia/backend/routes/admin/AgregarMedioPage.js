@@ -109,8 +109,9 @@ router.post('/AgregarMedioPageModificar', async function(req, res, next){
 
         // 
         let img_id = req.body.img_original;
-        let borrar_img_original = false;
-        if(req.body.img_delete == '1'){
+        let borrar_img_vieja = false;
+
+        if(req.body.img_delete === '1'){
             img_id=null;
             borrar_img_original=true;
         }else{
@@ -126,25 +127,27 @@ router.post('/AgregarMedioPageModificar', async function(req, res, next){
         }
 
         let Obj = {
+            Logo: img_id,
             Descripcion: req.body.Descripcion,
-            WhatsApp: req.body.WhatsApp,
             Email: req.body.Email,
+            WhatsApp: req.body.WhatsApp,
             URL: req.body.URL,
             LinkWinamp: req.body.LinkWinamp,
             LinkWMP: req.body.LinkWMP,
             Comentarios: req.body.Comentarios,
-            Logo: img_id
+            FchHoraAlta: req.body.FchHoraAlta,
+            IdUsuario: req.session.UserId
         }
 
         await AgregarMedioModel.modificarAgregarMedioById(Obj, req.body.IdMedio);
         res.redirect('/admin/AgregarMedioPage');
     }catch (error){
-        console.log(error);
+        
         res.render('admin/AgregarMedioPageModificar', { layout: 'admin/layout', 
                                                         UserName: req.session.UserName, 
                                                         UserId: req.session.UserId,
                                                         error: true,
-                                                        mensaje: 'Error al intentar Modificar un  medio: ' + console.log(error)
+                                                        mensaje: error
                                                       }); //AgregarMedioPageAlta.hbs y layout.hbs
     }
 });

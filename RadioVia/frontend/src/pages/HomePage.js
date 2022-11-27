@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 // Manejo de API Rest
-import axios from 'axios'; 
+import axios from 'axios';
 import MedioItem from '../componentes/medios/MedioItem';
 //Hoja de Estilos
 import '../styles/componentes/pages/HomePage.css';
@@ -12,12 +12,12 @@ const HomePage = (props) => {
     useEffect(() => {
         const cargarMedios = async () => {
             setLoading(true);
-                const response = await axios.get('http://localhost:3000/api/api');
-                setMedios(response.data);
+            const response = await axios.get('http://localhost:3000/api/api');
+            setMedios(response.data);
             setLoading(false)
-        };     
+        };
         cargarMedios();
-    },[]);
+    }, []);
 
     // item.medios.IdMedio --> Agregue 'medios' en el medio de item.IdMedio porque el nodo principal 
     // del JSON que genera mi aplicativo viene con el nombre de la tabla 'medios'
@@ -28,22 +28,49 @@ const HomePage = (props) => {
             </div>
             <h2>Bienvendios</h2>
     */
-    return (
+    
 
-       <main className="holder" >
+    return (
+        <div className="bienvenidos">
+            <div >
+                <p>Bienvenidos a la Guia Gratuita de Medios de Comunicacion (Radio, Diario y Television)</p>
+            </div>
 
             <div className="columnas">
-                <section className="bienvenidos">
-                    <p>Bienvenidos a la Guia Gratuita de Medios de Comunicacion (Radio, Diario y Television)</p>
-                </section>
-
-                <section >
-                    <div className="Reproductor" id='DivReproductor' name='DivReproductor'>
-                        
+                <section>
+                    <div className="buscador">
+                      <input type="textbox"></input>
                     </div>
-                    
-                    <div className="Listado">
-                        {loading ? (<p>cargando...</p>):(
+
+                    <div >
+                        {loading ? (<p>cargando...</p>) : (
+                            medios.map(item => <MedioItem
+                                IdMedio={item.medios.IdMedio}
+                                Descripcion={item.medios.Descripcion}
+                                LinkWMP={item.medios.LinkWMP}
+                            />)
+                        )}
+                    </div>
+                </section>
+                <aside>
+                    <iframe 
+                        className="Reproductor" 
+                        name='DivReproductor'
+                        title='Reproductor'
+                    >
+                    </iframe>
+                </aside>
+
+            </div>
+        </div>
+    );
+}
+
+export default HomePage;
+
+/*
+                                            
+{{loading ? (<p>cargando...</p>) : (
                             medios.map(item => <MedioItem
                                 IdMedio={item.medios.IdMedio}
                                 Logo={item.medios.Logo}
@@ -58,34 +85,6 @@ const HomePage = (props) => {
                                 IdUsuario={item.medios.IdUsuario}
                             />)
                         )}
-                    </div>
-                </section>
-            </div>
-        </main>
-    );
-}
-
-export default HomePage;
-
-/*
-
-
-                                            
-{loading ? (<p>cargando...</p>):(
-                        medios.map(item => <MedioItem 
-                                                key={item.IdMedio}
-                                                Descripcion={item.Descripcion}
-                                                WhatsApp={item.WhatsApp}
-                                                Email={item.Email}
-                                                URL={item.URL}
-                                                Logo={item.Logo}
-                                                LinkWinamp={item.LinkWinamp}
-                                                LinkWMP={item.LinkWMP}
-                                                Comentarios={item.Comentarios}
-                                                FchHoraAlta={item.FchHoraAlta}
-                                                IdUsuario={item.IdUsuario}
-                                            />)
-                    )}
 */
 
 

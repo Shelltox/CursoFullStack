@@ -4,7 +4,7 @@ async function getAgregarMedio(){
     try {
         //var query = 'SELECT * FROM login_usuario WHERE usuario = ? AND password = ? LIMIT 1';
         //var rows = await pool.query(query, [user, md5(password)]);
-        var query = 'SELECT * FROM medios ORDER BY Descripcion ';
+        var query = 'SELECT * FROM medios ORDER BY Descripcion DESC ';
         var rows = await pool.query(query);
         return rows;
     } catch (error) {

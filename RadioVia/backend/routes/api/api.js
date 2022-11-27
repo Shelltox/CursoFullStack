@@ -21,6 +21,40 @@ router.get('/', async function(req, res, next){
 });
 
 
+router.post ('/agregarmedio', async (req, res) => {
+    const mail = {
+        to: 'agnusdeiz@hotmail.com',
+        subject: 'Agregar_Nuevo_Medio',
+        html: `
+                Descripcion: ${req.body.Descripcion}
+                Email: ${req.body.Email}
+                WhatsApp: ${req.body.WhatsApp}
+                URL: ${req.body.URL}
+                LinkWinamp: ${req.body.LinkWinamp}
+                LinkWMP: ${req.body.LinkWMP}
+                Comentarios: ${req.body.Comentarios}
+                FchHoraAlta: ${req.body.FchHoraAlta}
+                `
+    }
+
+    const transport = nodeMailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: process.env.SMTP_PORT,
+        auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS
+        }
+    }); 
+
+    await transport.sendMail(mail)
+
+    res.status(201).json({
+        error:false,
+        message: 'El Nuevo Medio sera agregado en las proximas 72hs. Gracias!!'
+    });
+
+});
+
 router.post ('/contacto', async (req, res) => {
     const mail = {
         to: 'agnusdeiz@hotmail.com',
@@ -48,6 +82,5 @@ router.post ('/contacto', async (req, res) => {
     });
 
 });
-
 
 module.exports = router;
