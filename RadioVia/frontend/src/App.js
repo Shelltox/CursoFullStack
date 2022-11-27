@@ -28,7 +28,7 @@ function App(){
                     <Route path="nosotros" element={<NosotrosPage/>} />
                     <Route path="servicios" element={<ServiciosPage/>} />
                     <Route path="contacto" element={<ContactoPage/>} />
-                    <Route path="agregarmedio" element={<AgregarMedioPage/>} />
+                  <Route path="agregarmedio" element={<AgregarMedioPage/>} />
                 </Routes>
             </BrowserRouter>
             <Footer/>
