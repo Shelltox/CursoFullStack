@@ -4,7 +4,7 @@ const MedioItem = ({ IdMedio, Logo, Descripcion, WhatsApp, Email, URL, LinkWinam
     return (
         <div className="MedioItem">
             <h3>key: {IdMedio}</h3>
-            <img height={100} width={100} src={Logo}></img>
+            <img src={Logo} height={100} width={100} alt={'Radiovia'}></img>
             <h4>Descripcion: {Descripcion}</h4>
             <h4>WhatsApp: {WhatsApp}</h4>
             <h4>Email: {Email}</h4>
